@@ -7,3 +7,217 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+:root {
+  --portfolio-ink: #172033;
+  --portfolio-muted: #5d6879;
+  --portfolio-accent: #2357d8;
+  --portfolio-accent-dark: #173f9f;
+  --portfolio-surface: #f5f7fb;
+  --portfolio-border: #dfe5ef;
+}
+
+body {
+  color: var(--portfolio-ink);
+  background: #fff;
+}
+
+.masthead {
+  border-bottom: 1px solid var(--portfolio-border);
+  box-shadow: none;
+}
+
+.greedy-nav,
+.greedy-nav a {
+  background: #fff;
+}
+
+.page {
+  padding-right: 0;
+}
+
+.page__content {
+  font-size: 1rem;
+}
+
+.page__content a {
+  color: var(--portfolio-accent);
+  text-decoration: none;
+}
+
+.page__content a:hover,
+.page__content a:focus {
+  color: var(--portfolio-accent-dark);
+  text-decoration: underline;
+}
+
+.portfolio-home {
+  max-width: 860px;
+  padding: 1rem 0 4rem;
+}
+
+.portfolio-hero {
+  padding: clamp(2.75rem, 7vw, 5.5rem) 0 clamp(3rem, 7vw, 5rem);
+}
+
+.portfolio-eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--portfolio-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.portfolio-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2.25rem, 5.5vw, 4.25rem);
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+}
+
+.portfolio-lede {
+  max-width: 700px;
+  margin: 1.6rem 0 0;
+  color: var(--portfolio-muted);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.75;
+}
+
+.portfolio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.page__content .portfolio-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid var(--portfolio-accent);
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.page__content .portfolio-button:hover,
+.page__content .portfolio-button:focus {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.page__content .portfolio-button--primary {
+  color: #fff;
+  background: var(--portfolio-accent);
+}
+
+.page__content .portfolio-button--primary:hover,
+.page__content .portfolio-button--primary:focus {
+  color: #fff;
+  background: var(--portfolio-accent-dark);
+}
+
+.page__content .portfolio-button--secondary {
+  color: var(--portfolio-accent);
+  background: #fff;
+}
+
+.portfolio-section {
+  padding: clamp(2.75rem, 6vw, 4.5rem) 0;
+  border-top: 1px solid var(--portfolio-border);
+}
+
+.portfolio-section__heading {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.65fr) minmax(280px, 1.35fr);
+  column-gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-section__heading .portfolio-eyebrow {
+  grid-column: 1 / -1;
+}
+
+.portfolio-section__heading h2,
+.portfolio-focus h2 {
+  margin: 0;
+  color: var(--portfolio-ink);
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.portfolio-section__heading > p:last-child,
+.portfolio-focus > p {
+  margin: 0;
+  color: var(--portfolio-muted);
+  line-height: 1.7;
+}
+
+.experience-list {
+  border-top: 1px solid var(--portfolio-border);
+}
+
+.experience-card {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.65fr) minmax(280px, 1.35fr);
+  column-gap: 3rem;
+  padding: 1.65rem 0;
+  border-bottom: 1px solid var(--portfolio-border);
+}
+
+.experience-card__date {
+  margin: 0;
+  color: var(--portfolio-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.experience-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.15rem;
+}
+
+.experience-card div p {
+  margin: 0;
+  color: var(--portfolio-muted);
+}
+
+.portfolio-focus {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  margin-top: clamp(2.75rem, 6vw, 4.5rem);
+  padding: clamp(2rem, 5vw, 3.25rem);
+  border-radius: 16px;
+  background: var(--portfolio-surface);
+}
+
+@media (max-width: 700px) {
+  .portfolio-home {
+    padding-right: 0.25rem;
+  }
+
+  .portfolio-section__heading,
+  .experience-card,
+  .portfolio-focus {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .portfolio-section__heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-card {
+    padding: 1.4rem 0;
+  }
+
+  .portfolio-focus {
+    gap: 1.25rem;
+  }
+}
